@@ -12,6 +12,8 @@ def parse_command(line: str) -> Optional[Command]:
         return None
     if stripped.lower() in {"status", "status()"}:
         return ("status",)
+    if stripped.lower() in {"help", "help()"}:
+        return ("help",)
 
     tokens = stripped.split()
     if len(tokens) == 2 and tokens[1].lower() in {"offhook", "onhook"}:
